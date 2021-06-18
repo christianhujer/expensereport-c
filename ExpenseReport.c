@@ -1,6 +1,16 @@
 #include <stdio.h>
 #include <time.h>
-#include "Expense.h"
+
+enum Type {
+    DINNER,
+    BREAKFAST,
+    CAR_RENTAL
+};
+
+struct Expense {
+    enum Type type;
+    int amount;
+};
 
 void printExpenses(struct Expense *expenses[], size_t numExpenses) {
     int total = 0;
